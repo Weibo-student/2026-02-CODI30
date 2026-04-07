@@ -24,7 +24,22 @@ show_menu(){
 	
 }
 
+miracle_sort(){
+  local n=${#nums[@]}
+  for ((i=0; i<n-1; i++)); do
+    for ((j=0; j<n-i-1; j++)); do
+      if (( nums[j] > nums[j+1] )); then
+      	echo "Sorting faild"
+        echo "Sorry the miracle doesn't happent"
+        exit
+      fi
+    done
+  done
+}
+
 show_menu
+ask_number
+miracle_sort
 
 
 
